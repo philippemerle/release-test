@@ -3,8 +3,9 @@ jdk: oraclejdk8
 
 script:
   - echo "Nothing to build."
-  - git tag current -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
-  - git push --tags
+  - echo git tag current -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+  - echo git push --tags
+  - export GIT_TAG=current
 
 deploy:
   provider: releases
