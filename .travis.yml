@@ -2,9 +2,7 @@ language: java
 jdk: oraclejdk8
 
 script:
-- echo "Nothing to build."
-
-before_deploy:
+  - echo "Nothing to build."
   - git config --global user.email "builds@travis-ci.com"
   - git config --global user.name "Travis CI"
   - git tag current -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
