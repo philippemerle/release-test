@@ -1,0 +1,13 @@
+language: java
+jdk: oraclejdk8
+script:
+- echo "Nothing to build."
+deploy:
+  provider: releases
+  api_key:
+    secure: xD2usohEKSIix2OAbaGUVi7luL5d+2SMpEndOY6wkLnvkUT2sFSZhjgRT+oBXFnRaMvuXcT1gXX3QozSxH0J86obhi9NOiDYeTkVK3vBvWTiH+nk2aST6esny9NIBLRIndgJhg6nhdaPSDnGgixjZj47+Wo8K2X7XuG6SugWrs/FFgpzlWudn1CWMsUG01a3gjfhX+9Xv8j2rKZKoRYg4nKL/4AuFzseC9wc8yL9kcUHHGhTbQXfpe8sKxmPHM+8lShQfRMgPaG7B/XEEUODOXaD91eot3shcDxJBA9VoW+BpbIWZCONfibS+3OsBEKv137r1+Kq1Lq84qPH3V63m+MB0B8RueWM1Ivt4bmPVXF5ShFjHeMa+e1Sx+9NTQbbnHsADLbSPbELopDrmjA8z5A/9t1Gw+6cZ4AYhiz37aE4t+BfEPQMtaevJx+PmVKGLYUWfVAUv3we1LOg/L6wJ8iKzNHxATNvuEGCkGmiPGxlZZltcI+7oIZZEBP5kfEFsSgytOCMF0TgYYeE8kWdr6zVsml4ceTGLcCImSFYpGjp+T/pHzRFNRyZOy0s6TsSCjXt/nShoCfn9u5SCNqb126WdfaDrt5vyIz9+L9YkPtRXgslysEYmFPjepbyjwaxwuoHHR75IGP26QnSVVY5a8JZqo6OTWUj9hjKDYqbfLo=
+  file: binary
+  skip_cleanup: true
+  overwrite: true
+  on:
+    tags: true
