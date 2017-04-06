@@ -3,8 +3,8 @@ jdk: oraclejdk8
 
 script:
   - echo "Nothing to build."
-
-after_success:
+#
+# after_success:
   - git config --global user.email "Philippe.merle@inria.fr"
   - git config --global user.name "Philippe Merle"
   - git tag -f current -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
