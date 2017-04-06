@@ -8,9 +8,8 @@ after_success:
   - git config --global user.email "philippe.merle@inria.fr"
   - git config --global user.name "philippemerle"
   - git tag current -f -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
- # - git push --tags
-  - git push origin --tags
-  - git fetch origin
+  - git push --tags
+  - echo git fetch origin
 
 deploy:
   provider: releases
