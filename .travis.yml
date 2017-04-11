@@ -4,7 +4,7 @@ jdk: oraclejdk8
 
 script:
   - echo "Nothing to build."
-  - setenv
+  - set
 #
 # after_success:
   - git config --global user.email "Philippe.merle@inria.fr"
