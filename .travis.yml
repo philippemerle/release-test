@@ -1,18 +1,13 @@
 sudo: false
 language: java
 jdk: oraclejdk8
-
 script:
-  - echo "Nothing to build."
-  - set
-#
-# after_success:
-  - git config --global user.email "Philippe.merle@inria.fr"
-  - git config --global user.name "Philippe Merle"
-  - git tag -f current -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
-  - git push -f --tags
-  - export GIT_TAG=current
-
+- echo "Nothing to build."
+- set
+- git config --global user.email "Philippe.merle@inria.fr"
+- git config --global user.name "Philippe Merle"
+- git tag -f current -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+- git push -f --tags  https://${GIT_TOKEN}@github.com/philippemerle/test-releases
 deploy:
   provider: releases
   api_key:
@@ -24,3 +19,6 @@ deploy:
   on:
     tags: true
     repo: philippemerle/release-test
+env:
+  global:
+    secure: oVAEQFxiEKT5yCSWXzV5b4UAp2rFhlHJcnk2ZjSf/aMCABEesHxga/P03Myyiyz1WgXzALHYsDlM1Qjhfj84p7OMXVXlgTYZ0UV2ApVZm3ZOUYK9FwR986d0MpPbbQNG93B9H5x6b9Y1+8OrIxymVPuFV+cri9QJfFq5IqyC1XBQu8X0HCTOHKxvMMGB3xJEcRgRYUa0rJPQ4O9XfE7/i7ZqB90RNqQKA2Uiq94q8Yox2qZzP0NLNSAQHzVltt9Or6kss5WyNZNeQl0vntvGHCuLwSEPOX0pKjM0UgGQBo1iPmJzYco8RPvAJC9eBKmynhKScsDO7wo+L0J6KRxGUMmGlbJRD2mKQa2/9kWZe4L11dPFZn04Qwl3v3pDPyG8oJROufoK3a3fyDkfL65ek1sBSbmvOHsduZSZOSnwP8YFqBxaWCNJSQWYCAwlGSj5O22az23DpobQQQ+loMwUlCFzS/hBnihgm4U8T6usgwgK4xGIgJNqNcJYL2RDs0j/vfS/Yf0GjQNW2APqZ3Abj3R3DKVYhewqTtJmVeuyaDgXWvZS09OMJtNjHDGoOZxfy+YlLDsgx8tq3kp02MhS7wZI16KwBRtJEYP4QbMmolDlDPBAGMoCFjeur/MJtmYjEudVaUXyuCZCl8DtC5wab5YaE7NNNzQdZAD80gXsBFQ=
