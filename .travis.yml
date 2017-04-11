@@ -5,10 +5,10 @@ script:
 - echo "Nothing to build."
 
 after_success:
-- git config --global user.email "Philippe.merle@inria.fr"
-- git config --global user.name "Philippe Merle"
-- git tag -f current -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
-- git push -f --tags  https://${GIT_TOKEN}@github.com/philippemerle/release-test
+- echo git config --global user.email "Philippe.merle@inria.fr"
+- echo git config --global user.name "Philippe Merle"
+- echo git tag -f current -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+- echo git push -f --tags  https://${GIT_TOKEN}@github.com/philippemerle/release-test
 deploy:
   provider: releases
   api_key:
