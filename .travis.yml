@@ -1,8 +1,10 @@
+sudo: false
 language: java
 jdk: oraclejdk8
 
 script:
   - echo "Nothing to build."
+  - setenv
 #
 # after_success:
   - git config --global user.email "Philippe.merle@inria.fr"
