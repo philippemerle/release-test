@@ -11,7 +11,7 @@ if [ "$TRAVIS_BRANCH" = "master" ]; then
       echo "Starting to tag current release."
 
       git config --global user.email "travis@travis-ci.org"
-      git config --global user.name "Travis"
+      git config --global user.name "Travis CI"
 
       # Add tag and push to master.
       git tag -f current -m "Tagged from TravisCI for build $TRAVIS_BUILD_NUMBER"
