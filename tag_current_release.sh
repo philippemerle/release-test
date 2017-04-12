@@ -8,17 +8,18 @@ if [ "$TRAVIS_BRANCH" = "master" ]; then
     
     # Is this not a build which was triggered by setting a new tag?
     if [ -z "$TRAVIS_TAG" ]; then
-      echo -e "Starting to tag current release.\n"
+      echo "Starting to tag current release."
 
       git config --global user.email "travis@travis-ci.org"
       git config --global user.name "Travis"
 
       # Add tag and push to master.
       git tag -f current -m "Tagged from TravisCI for build $TRAVIS_BUILD_NUMBER"
-      git push -f --tags origin # https://${GIT_TOKEN}@github.com/philippemerle/release-test
-      git fetch origin
+      # git push -f --tags origin git
+      # git fetch origin
+      git push -f --tags https://${GIT_TOKEN}@github.com/philippemerle/release-test
 
-      echo -e "Done magic with tags.\n"
-  fi
+      echo "Done tag current release."
+    fi
   fi
 fi
