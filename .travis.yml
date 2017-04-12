@@ -16,7 +16,8 @@ deploy:
   skip_cleanup: true
   overwrite: true
   on:
-    tags: true
+    # tags: true
+    branch : master
     repo: philippemerle/release-test
 
 env:
