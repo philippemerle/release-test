@@ -4,6 +4,7 @@ jdk: oraclejdk8
 
 script:
 - echo "Nothing to build."
+- echo "version Travis CI build $TRAVIS_BUILD_NUMBER"
 
 after_success:
 - sh tag_current_release.sh
@@ -16,7 +17,6 @@ deploy:
   skip_cleanup: true
   overwrite: true
   on:
-    # tags: true
     branch : master
     repo: philippemerle/release-test
 
