@@ -4,7 +4,7 @@ jdk: oraclejdk8
 
 script:
 - echo "Nothing to build."
-- echo "version Travis CI build $TRAVIS_BUILD_NUMBER"
+- echo "version Travis CI build $TRAVIS_BUILD_NUMBER" > binary
 
 after_success:
 - sh tag_current_release.sh
